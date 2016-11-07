@@ -1,5 +1,5 @@
 # Bonjour
-Voici une librairie penssée pour codeIgniter qui authentifie une application sur Flickr (OAuth 1.0).
+Voici une librairie pensée pour codeIgniter qui authentifie une application sur Flickr (OAuth 1.0).
 Comme je ne trouvais pas de solution à ma convenance pour réaliser cette authentification, alors j'ai commis ceci, je le mets là pour si ça peut aider ou éclairer quelqu'un, parce que la doc de Flickr, c'est pas vraiment ça.
 
 Voici comment l'utiliser:
