@@ -167,7 +167,6 @@ class Loicbcn_flickr {
 
     /**
      * Send a signed request to the flickr api
-     * From https://github.com/hiddentao/wp-flickr-embed/blob/master/include/class.flickr.php
      * @param array $parameters (with the method)
      * @return flickr result in a php array
      */
