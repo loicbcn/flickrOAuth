@@ -171,7 +171,7 @@ class Loicbcn_flickr {
      * @param array $parameters (with the method)
      * @return flickr result in a php array
      */
-    private function call($parameters){
+    public function call($parameters){
         $parameters["oauth_nonce"] = $this->generate_nonce();
         $parameters["format"] = "json";
         $parameters["nojsoncallback"] = 1;
