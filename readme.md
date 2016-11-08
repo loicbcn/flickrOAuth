@@ -7,12 +7,13 @@ Voici comment l'utiliser:
 Copier Loicbcn_flickr.php dans application/librairies
 
 Dans votre controller, charger la librairie et appeler la méthode getPhotos qui est là pour faire un test:
-
+```php
         $this->load->library('Loicbcn_flickr');
         // getPhotos par défaut
         $photos = $this->loicbcn_flickr->getPhotos();
         // demander des paramètres supplémentaires
         $photos = $this->loicbcn_flickr->getPhotos(array("extras" => "z, url_c, url_l, url_o"));
+```
 
 Au premier appel, vous serez redirigé vers Flickr pour autoriser l'accès de l'application au compte twitter.
 Ensuite, les données d'accès sont conservées dans application/cache/
