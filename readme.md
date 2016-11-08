@@ -6,7 +6,7 @@ Voici comment l'utiliser:
 
 Copier Loicbcn_flickr.php dans application/librairies
 
-Dans votre controller, charger la librairie et appeler la méthode getPhotos qui est la pour faire un test:
+Dans votre controller, charger la librairie et appeler la méthode getPhotos qui est là pour faire un test:
 
         $this->load->library('Loicbcn_flickr');
         // getPhotos par défaut
