@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Loicbcn_flickr {
 
     // flickr api key
-    const KEY    = 'flickrApi_Key';
+    const KEY    = 'flickrApi_Key'; // your flickr api key
     // flickr api secret
-    const SECRET = 'Flickr_Api_Secret';
-    // Si vous avez un proxy: 'mon.proxy.domaine:port',
+    const SECRET = 'Flickr_Api_Secret'; // your flickr api secret
+    // If you're behind a proxy: 'mon.proxy.domaine:port',
     const PROXY = NULL;
 
     private $method = 'GET';
@@ -65,7 +65,7 @@ class Loicbcn_flickr {
     }
 
     /**
-     * start of the authnmtification process
+     * start of the authentification process
      *
      */
     public function authme()
@@ -163,6 +163,21 @@ class Loicbcn_flickr {
 
         return $this->call(array_merge($base_params, $params));
     }
+    
+    public function getCounts($params = array()){
+        $base_params = array(
+            "method" => "flickr.photos.getCounts"
+        );
+
+        return $this->call(array_merge($base_params, $params));
+    }
+
+    public function testLogin(){
+        $base_params = array(
+            "method" => "flickr.test.login"
+        );
+        return $this->call($base_params);
+    }
 
 
     /**
@@ -180,7 +195,7 @@ class Loicbcn_flickr {
         $parameters["oauth_version"] = "1.0";
         $parameters["oauth_token"] = $this->oauth_token;
 
-        $parameters["oauth_signature"] = $this->createSignature($this->access_token_url, $parameters, $this->oauth_token_secret);
+        $parameters["oauth_signature"] = $this->createSignature($this->api_call, $parameters, $this->oauth_token_secret);
         $result = json_decode($this->httpRequest($this->api_call, $parameters), true);
 
         if ($result && is_array($result) && isset($result["stat"]) && $result["stat"] == "fail") {
